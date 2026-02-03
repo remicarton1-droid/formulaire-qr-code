@@ -1,1 +1,99 @@
-<html><head><meta content="text/html; charset=UTF-8" http-equiv="content-type"><style type="text/css">ol{margin:0;padding:0}table td,table th{padding:0}.c0{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:11pt;font-family:"Arial";font-style:normal}.c1{padding-top:0pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:left}.c5{text-decoration-skip-ink:none;-webkit-text-decoration-skip:none;color:#1155cc;text-decoration:underline}.c3{background-color:#ffffff;max-width:451.4pt;padding:72pt 72pt 72pt 72pt}.c4{color:inherit;text-decoration:inherit}.c2{height:11pt}.title{padding-top:0pt;color:#000000;font-size:26pt;padding-bottom:3pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}.subtitle{padding-top:0pt;color:#666666;font-size:15pt;padding-bottom:16pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}li{color:#000000;font-size:11pt;font-family:"Arial"}p{margin:0;color:#000000;font-size:11pt;font-family:"Arial"}h1{padding-top:20pt;color:#000000;font-size:20pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h2{padding-top:18pt;color:#000000;font-size:16pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h3{padding-top:16pt;color:#434343;font-size:14pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h4{padding-top:14pt;color:#666666;font-size:12pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h5{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h6{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;font-style:italic;orphans:2;widows:2;text-align:left}</style></head><body class="c3 doc-content"><p class="c1"><span class="c0">&lt;!DOCTYPE html&gt;</span></p><p class="c1"><span class="c0">&lt;html lang=&quot;fr&quot;&gt;</span></p><p class="c1"><span class="c0">&lt;head&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;meta charset=&quot;UTF-8&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;title&gt;Formulaire avec Scanner QR&lt;/title&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;style&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; body { font-family: Arial, sans-serif; max-width: 500px; margin: 2em auto; padding: 1em; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; input, button { width: 100%; padding: 10px; margin-bottom: 10px; box-sizing: border-box; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; #qr-reader { border: 1px solid #ccc; margin-bottom: 1em; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; #status-message { padding: 10px; border-radius: 5px; text-align: center; display: none; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; .success { background-color: #d4edda; color: #155724; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; .error { background-color: #f8d7da; color: #721c24; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/style&gt;</span></p><p class="c1"><span class="c0">&lt;/head&gt;</span></p><p class="c1"><span class="c0">&lt;body&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;h1&gt;Scanner un QR Code&lt;/h1&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;p&gt;La cam&eacute;ra va s&#39;activer ci-dessous. Scannez un QR code pour remplir le champ.&lt;/p&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;!-- L&#39;&eacute;l&eacute;ment o&ugrave; le scanner vid&eacute;o sera affich&eacute; --&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div id=&quot;qr-reader&quot; style=&quot;width: 100%;&quot;&gt;&lt;/div&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;form id=&quot;myForm&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;label for=&quot;qr-result&quot;&gt;ID du QR Code :&lt;/label&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;input type=&quot;text&quot; id=&quot;qr-result&quot; name=&quot;qrCodeData&quot; placeholder=&quot;Le r&eacute;sultat du scan appara&icirc;tra ici...&quot; required&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;label for=&quot;user-name&quot;&gt;Votre Nom :&lt;/label&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;input type=&quot;text&quot; id=&quot;user-name&quot; name=&quot;userName&quot; placeholder=&quot;Entrez votre nom&quot; required&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;button type=&quot;submit&quot;&gt;Envoyer les donn&eacute;es&lt;/button&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/form&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div id=&quot;status-message&quot;&gt;&lt;/div&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;!-- 1. Inclure la librairie html5-qrcode --&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;script src=&quot;https://unpkg.com/html5-qrcode&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;script&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; // 2. L&#39;URL de votre script Google Apps Script</span></p><p class="c1"><span>&nbsp; &nbsp; &nbsp; &nbsp; const SCRIPT_URL = &quot;</span><span class="c5"><a class="c4" href="https://www.google.com/url?q=https://script.google.com/a/macros/veolia.com/s/AKfycbzn7OOY6XpuaPrtkakyBE_DP8VXvtwiJRnDt52ilA5s43q1DZdf8PcWd-3otXd4Q5GO/exec&amp;sa=D&amp;source=editors&amp;ust=1770111958341927&amp;usg=AOvVaw30pISe__7k3u70bMulXdL6">https://script.google.com/a/macros/veolia.com/s/AKfycbzn7OOY6XpuaPrtkakyBE_DP8VXvtwiJRnDt52ilA5s43q1DZdf8PcWd-3otXd4Q5GO/exec</a></span><span class="c0">&quot;;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; // 3. Fonction qui s&#39;ex&eacute;cute quand un QR code est scann&eacute; avec succ&egrave;s</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; function onScanSuccess(decodedText, decodedResult) {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; console.log(`Code scann&eacute; = ${decodedText}`, decodedResult);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Remplit le champ du formulaire avec le r&eacute;sultat</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(&#39;qr-result&#39;).value = decodedText;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Optionnel : Arr&ecirc;ter le scanner apr&egrave;s un scan r&eacute;ussi</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; html5QrcodeScanner.clear();</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(&#39;qr-reader&#39;).style.display = &#39;none&#39;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; alert(`Code scann&eacute; : ${decodedText}`);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; // 4. Initialisation et configuration du scanner</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; var html5QrcodeScanner = new Html5QrcodeScanner(</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &quot;qr-reader&quot;, // ID de l&#39;&eacute;l&eacute;ment div</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; { fps: 10, qrbox: { width: 250, height: 250 } }, // Configuration (frames per second, taille de la bo&icirc;te)</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /* verbose= */ false);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; // Lance le rendu du scanner</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; html5QrcodeScanner.render(onScanSuccess);</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; // 5. G&eacute;rer l&#39;envoi du formulaire</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; const form = document.getElementById(&#39;myForm&#39;);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; const statusMessage = document.getElementById(&#39;status-message&#39;);</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; form.addEventListener(&#39;submit&#39;, function(e) {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; e.preventDefault(); // Emp&ecirc;che le rechargement de la page</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; statusMessage.textContent = &quot;Envoi en cours...&quot;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; statusMessage.style.display = &#39;block&#39;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; statusMessage.className = &#39;&#39;;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fetch(SCRIPT_URL, {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; method: &#39;POST&#39;,</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; body: new FormData(form)</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; })</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .then(response =&gt; response.json())</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .then(data =&gt; {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (data.status === &#39;success&#39;) {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; statusMessage.textContent = &quot;Donn&eacute;es envoy&eacute;es avec succ&egrave;s !&quot;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; statusMessage.className = &#39;success&#39;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; form.reset(); // Vide le formulaire</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; throw new Error(data.message || &#39;Une erreur est survenue.&#39;);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; })</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .catch(error =&gt; {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; console.error(&#39;Erreur:&#39;, error);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; statusMessage.textContent = &quot;Erreur lors de l&#39;envoi : &quot; + error.message;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; statusMessage.className = &#39;error&#39;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; });</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/script&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&lt;/body&gt;</span></p><p class="c1"><span class="c0">&lt;/html&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1 c2"><span class="c0"></span></p></body></html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire avec Scanner QR</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 2em auto; padding: 1em; }
+        input, button { width: 100%; padding: 10px; margin-bottom: 10px; box-sizing: border-box; }
+        #qr-reader { border: 1px solid #ccc; margin-bottom: 1em; }
+        #status-message { padding: 10px; border-radius: 5px; text-align: center; display: none; }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+
+    <h1>Scanner un QR Code</h1>
+    <p>La caméra va s'activer ci-dessous. Scannez un QR code pour remplir le champ.</p>
+
+    <!-- L'élément où le scanner vidéo sera affiché -->
+    <div id="qr-reader" style="width: 100%;"></div>
+
+    <form id="myForm">
+        <label for="qr-result">ID du QR Code :</label>
+        <input type="text" id="qr-result" name="qrCodeData" placeholder="Le résultat du scan apparaîtra ici..." required>
+
+        <label for="user-name">Votre Nom :</label>
+        <input type="text" id="user-name" name="userName" placeholder="Entrez votre nom" required>
+
+        <button type="submit">Envoyer les données</button>
+    </form>
+
+    <div id="status-message"></div>
+
+    <!-- 1. Inclure la librairie html5-qrcode -->
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+
+    <script>
+        // 2. L'URL de votre script Google Apps Script
+        const SCRIPT_URL = "https://script.google.com/a/macros/veolia.com/s/AKfycbzn7OOY6XpuaPrtkakyBE_DP8VXvtwiJRnDt52ilA5s43q1DZdf8PcWd-3otXd4Q5GO/exec";
+
+        // 3. Fonction qui s'exécute quand un QR code est scanné avec succès
+        function onScanSuccess(decodedText, decodedResult) {
+            console.log(`Code scanné = ${decodedText}`, decodedResult);
+            
+            // Remplit le champ du formulaire avec le résultat
+            document.getElementById('qr-result').value = decodedText;
+            
+            // Optionnel : Arrêter le scanner après un scan réussi
+            html5QrcodeScanner.clear();
+            document.getElementById('qr-reader').style.display = 'none';
+            alert(`Code scanné : ${decodedText}`);
+        }
+
+        // 4. Initialisation et configuration du scanner
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "qr-reader", // ID de l'élément div
+            { fps: 10, qrbox: { width: 250, height: 250 } }, // Configuration (frames per second, taille de la boîte)
+            /* verbose= */ false);
+        
+        // Lance le rendu du scanner
+        html5QrcodeScanner.render(onScanSuccess);
+
+        // 5. Gérer l'envoi du formulaire
+        const form = document.getElementById('myForm');
+        const statusMessage = document.getElementById('status-message');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Empêche le rechargement de la page
+
+            statusMessage.textContent = "Envoi en cours...";
+            statusMessage.style.display = 'block';
+            statusMessage.className = '';
+
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                body: new FormData(form)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    statusMessage.textContent = "Données envoyées avec succès !";
+                    statusMessage.className = 'success';
+                    form.reset(); // Vide le formulaire
+                } else {
+                    throw new Error(data.message || 'Une erreur est survenue.');
+                }
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                statusMessage.textContent = "Erreur lors de l'envoi : " + error.message;
+                statusMessage.className = 'error';
+            });
+        });
+    </script>
+
+</body>
+</html>
